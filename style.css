@@ -1,0 +1,123 @@
+.kavoon-regular {
+  font-family: "Kavoon", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.kdam-thmor-pro-regular {
+  font-family: "Kdam Thmor Pro", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+body {
+    /* max-width: 1200px;
+    max-height: 750px; */
+    background: linear-gradient(180deg, #6289FF 0%, #44B9FF 15.87%, #FFEFFC 100%);
+}
+
+header {
+    background-color: #FF6AE4; 
+}
+
+h1 {
+    color: white;
+    font-family: "Kavoon", serif;
+}
+
+h2{
+    color: #4DBEFF;
+    font-family: "Kavoon", serif;
+}
+
+h3 {
+    color: white;
+    font-family: "Kdam Thmor Pro", sans-serif;
+}
+
+p {
+    color: #4DBEFF;
+    font-family: "Kdam Thmor Pro", serif;
+}
+
+
+/* Prof's note - Use descendant selectors to change display or visibility on/off for small clouds */
+
+main {
+    display: block;
+    width: 1200px;
+    height: 500px;
+    position: relative;
+    /* absolute position 'to' it! */
+}
+
+#madlibs {
+    position: absolute;
+    top: 150px;
+    left: 100px;
+    width: 239px;
+    height: 174px;
+}
+
+/* small clouds positioned NOT to big cloud but to bigcloud's parent */
+
+
+/* style for small clouds, starting position */
+#msmallcloud1, #msmallcloud2, #msmallcloud3 {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    z-index: -1;
+}
+
+/* hover animations */
+#madlibs:hover #msmallcloud1 {
+    animation: moveCloud1 0.5s ease forwards;
+}
+
+#madlibs:hover #msmallcloud2 {
+    animation: moveCloud2 0.5s ease forwards;
+}
+
+#madlibs:hover #msmallcloud3 {
+    animation: moveCloud3 0.5s ease forwards;
+}
+
+/* keyframes */
+@keyframes moveCloud1 {
+    0% {
+        top: 50px;
+        left: 50px;
+    }
+    100% {
+        top: -80px;
+        left: -50px;
+    }
+}
+
+@keyframes moveCloud2 {
+    0% {
+        top: 50px;
+        left: 50px;
+    }
+    100% {
+        top: -30px;
+        left: 200px;
+    }
+}
+
+@keyframes moveCloud3 {
+    0% {
+        top: 50px;
+        left: 50px;
+    }
+    100% {
+        top: 180px;
+        left: 150px;
+    }
+}
+
+footer p a {
+    color: #4DBEFF;
+}
