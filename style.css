@@ -11,6 +11,8 @@
 }
 
 
+/* ------------------------ */
+
 body {
     /* max-width: 1200px;
     max-height: 750px; */
@@ -41,9 +43,6 @@ p {
     font-family: "Kdam Thmor Pro", serif;
 }
 
-
-/* Prof's note - Use descendant selectors to change display or visibility on/off for small clouds */
-
 main {
     display: block;
     width: 1200px;
@@ -52,7 +51,11 @@ main {
     /* absolute position 'to' it! */
 }
 
-#madlibs {
+
+/* ---------------------------------------------------------- */
+/* RESEARCH */
+
+#research {
     position: absolute;
     top: 150px;
     left: 100px;
@@ -60,10 +63,90 @@ main {
     height: 174px;
 }
 
-/* small clouds positioned NOT to big cloud but to bigcloud's parent */
-
+#r-h2 {
+    position: absolute;
+    top: 150px;
+    left: 500px;
+}
 
 /* style for small clouds, starting position */
+#rsmallcloud1, #rsmallcloud2, #rsmallcloud3 {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    z-index: -1;
+}
+
+/* hover animations */
+#research:hover #rsmallcloud1 {
+    animation: moveCloud1 0.5s ease forwards;
+}
+
+#research:hover #rsmallcloud2 {
+    animation: moveCloud2 0.5s ease forwards;
+}
+
+#research:hover #rsmallcloud3 {
+    animation: moveCloud3 0.5s ease forwards;
+}
+
+/* keyframes */
+@keyframes moveRCloud1 {
+    0% {
+        top: 50px;
+        left: 50px;
+    }
+    100% {
+        top: -80px;
+        left: -50px;
+    }
+}
+
+@keyframes moveRCloud2 {
+    0% {
+        top: 50px;
+        left: 50px;
+    }
+    100% {
+        top: -30px;
+        left: 200px;
+    }
+}
+
+@keyframes moveRCloud3 {
+    0% {
+        top: 50px;
+        left: 50px;
+    }
+    100% {
+        top: 180px;
+        left: 150px;
+    }
+}
+
+footer p a {
+    color: #4DBEFF;
+}
+
+
+/* ---------------------------------------------------------- */
+/* MADLIBS */
+
+#madlibs {
+    position: absolute;
+    top: 300px;
+    left: 100px;
+    width: 239px;
+    height: 174px;
+}
+
+#m-h2 {
+    position: absolute;
+    top: 300px;
+    left: 100px;
+}
+
+/* (sabi) style for small clouds, starting position */
 #msmallcloud1, #msmallcloud2, #msmallcloud3 {
     position: absolute;
     top: 50px;
@@ -85,7 +168,7 @@ main {
 }
 
 /* keyframes */
-@keyframes moveCloud1 {
+@keyframes moveMCloud1 {
     0% {
         top: 50px;
         left: 50px;
@@ -96,7 +179,7 @@ main {
     }
 }
 
-@keyframes moveCloud2 {
+@keyframes moveMCloud2 {
     0% {
         top: 50px;
         left: 50px;
@@ -107,7 +190,161 @@ main {
     }
 }
 
-@keyframes moveCloud3 {
+@keyframes moveMCloud3 {
+    0% {
+        top: 50px;
+        left: 50px;
+    }
+    100% {
+        top: 180px;
+        left: 150px;
+    }
+}
+
+footer p a {
+    color: #4DBEFF;
+}
+
+
+/* ---------------------------------------------------------- */
+/* EVERY PICTURE */
+
+#everyPicture {
+    position: absolute;
+    top: 150px;
+    left: 500px;
+    width: 239px;
+    height: 174px;
+}
+
+#e-h2 {
+    position: absolute;
+    top: 150px;
+    left: 500px;
+}
+
+/* style for small clouds, starting position */
+#esmallcloud1, #esmallcloud2, #esmallcloud3 {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    z-index: -1;
+}
+
+/* hover animations */
+#everypicture:hover #esmallcloud1 {
+    animation: moveCloud1 0.5s ease forwards;
+}
+
+#everypicture:hover #esmallcloud2 {
+    animation: moveCloud2 0.5s ease forwards;
+}
+
+#everypicture:hover #esmallcloud3 {
+    animation: moveCloud3 0.5s ease forwards;
+}
+
+/* keyframes */
+@keyframes moveECloud1 {
+    0% {
+        top: 50px;
+        left: 50px;
+    }
+    100% {
+        top: -80px;
+        left: -50px;
+    }
+}
+
+@keyframes moveECloud2 {
+    0% {
+        top: 50px;
+        left: 50px;
+    }
+    100% {
+        top: -30px;
+        left: 200px;
+    }
+}
+
+@keyframes moveECloud3 {
+    0% {
+        top: 50px;
+        left: 50px;
+    }
+    100% {
+        top: 180px;
+        left: 150px;
+    }
+}
+
+footer p a {
+    color: #4DBEFF;
+}
+
+
+/* ---------------------------------------------------------- */
+/* GAME ON */
+
+#gameon {
+    position: absolute;
+    top: 300px;
+    left: 800px;
+    width: 239px;
+    height: 174px;
+}
+
+#g-h2 {
+    position: absolute;
+    top: 300px;
+    left: 800px;
+}
+
+/* style for small clouds, starting position */
+#gsmallcloud1, #gsmallcloud2, #gsmallcloud3 {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    z-index: -1;
+}
+
+/* hover animations */
+#gameon:hover #gsmallcloud1 {
+    animation: moveCloud1 0.5s ease forwards;
+}
+
+#gameon:hover #gsmallcloud2 {
+    animation: moveCloud2 0.5s ease forwards;
+}
+
+#gameon:hover #gsmallcloud3 {
+    animation: moveCloud3 0.5s ease forwards;
+}
+
+/* keyframes */
+@keyframes moveGCloud1 {
+    0% {
+        top: 50px;
+        left: 50px;
+    }
+    100% {
+        top: -80px;
+        left: -50px;
+    }
+}
+
+@keyframes moveGCloud2 {
+    0% {
+        top: 50px;
+        left: 50px;
+    }
+    100% {
+        top: -30px;
+        left: 200px;
+    }
+}
+
+@keyframes moveGCloud3 {
     0% {
         top: 50px;
         left: 50px;
