@@ -14,33 +14,43 @@
 /* ------------------------ */
 
 body {
-    /* max-width: 1200px;
-    max-height: 750px; */
-    background: linear-gradient(180deg, #6289FF 0%, #44B9FF 15.87%, #FFEFFC 100%);
+    max-width: 1200px;
+    min-width: 1200px;
+    background-image: url(images/starry-night.png);
+    background-repeat: no-repeat;
+    /* background: linear-gradient(180deg, #6289FF 0%, #44B9FF 15.87%, #FFEFFC 100%); */
 }
 
 header {
-    background-color: #FF6AE4; 
+    height: 125px;
+    margin-top: 70px;
+    margin-left: 30%;
+    margin-right: 32.5%;
+    background-color: #FF6AE4;
+    justify-content: center;
+    text-align: center;
 }
 
 h1 {
     color: white;
     font-family: "Kavoon", serif;
+    font-size: 50px;
 }
 
-h2{
+h2{ 
     color: #4DBEFF;
     font-family: "Kavoon", serif;
-}
-
-h3 {
-    color: white;
-    font-family: "Kdam Thmor Pro", sans-serif;
+    z-index: 2;
 }
 
 p {
     color: #4DBEFF;
     font-family: "Kdam Thmor Pro", serif;
+    font-size: 20px;
+}
+
+#tagline {
+    color: white;
 }
 
 main {
@@ -57,75 +67,64 @@ main {
 
 #research {
     position: absolute;
-    top: 150px;
+    top: 70px;
     left: 100px;
     width: 239px;
     height: 174px;
+    /* glenda added */
+    /* border: 2px solid purple; */
+    display: grid;
+    place-items: center;
+    /* transitions in both direction */
+    transition: all .5s ease;
 }
 
 #r-h2 {
     position: absolute;
-    top: 150px;
-    left: 500px;
+    /* glenda updated so always in center */
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-/* style for small clouds, starting position */
-#rsmallcloud1, #rsmallcloud2, #rsmallcloud3 {
+#rbigcloud h2 {
     position: absolute;
-    top: 50px;
-    left: 50px;
-    z-index: -1;
+    /* glenda updated so always in center */
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-/* hover animations */
+/* glenda added */
+#rsmallcloud1 a, #rsmallcloud2 a, #rsmallcloud3 a {
+    position: absolute;
+    top: 57%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+
+#research:hover {
+    /* from glenda: added 100px w and h */
+    width: 339px;
+    height: 274px;
+    transform: translate(-50px, -50px);
+}
+
 #research:hover #rsmallcloud1 {
-    animation: moveCloud1 0.5s ease forwards;
+    top: 35px;
+    left: 50px;
 }
 
 #research:hover #rsmallcloud2 {
-    animation: moveCloud2 0.5s ease forwards;
+    top: 50px;
+    left: 90%;
 }
 
 #research:hover #rsmallcloud3 {
-    animation: moveCloud3 0.5s ease forwards;
-}
-
-/* keyframes */
-@keyframes moveRCloud1 {
-    0% {
-        top: 50px;
-        left: 50px;
-    }
-    100% {
-        top: -80px;
-        left: -50px;
-    }
-}
-
-@keyframes moveRCloud2 {
-    0% {
-        top: 50px;
-        left: 50px;
-    }
-    100% {
-        top: -30px;
-        left: 200px;
-    }
-}
-
-@keyframes moveRCloud3 {
-    0% {
-        top: 50px;
-        left: 50px;
-    }
-    100% {
-        top: 180px;
-        left: 150px;
-    }
-}
-
-footer p a {
-    color: #4DBEFF;
+    top: 275px;
+    left: 30%;
 }
 
 
@@ -135,152 +134,162 @@ footer p a {
 #madlibs {
     position: absolute;
     top: 300px;
-    left: 100px;
+    left: 325px;
     width: 239px;
     height: 174px;
+    /* glenda added */
+    /* border: 2px solid purple; */
+    display: grid;
+    place-items: center;
+    /* transitions in both direction */
+    transition: all .5s ease;
 }
 
 #m-h2 {
     position: absolute;
-    top: 300px;
-    left: 100px;
+    /* glenda updated so always in center */
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-/* (sabi) style for small clouds, starting position */
-#msmallcloud1, #msmallcloud2, #msmallcloud3 {
+#mbigcloud {
     position: absolute;
-    top: 50px;
-    left: 50px;
-    z-index: -1;
+    /* glenda updated so always in center */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-/* hover animations */
+/* glenda added */
+#msmallcloud1 a, #msmallcloud2 a, #msmallcloud3 a {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#msmallcloud4 a {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#madlibs:hover {
+    /* from glenda: added 100px w and h */
+    width: 339px;
+    height: 274px;
+    transform: translate(-50px, -50px);
+}
+
 #madlibs:hover #msmallcloud1 {
-    animation: moveCloud1 0.5s ease forwards;
+    top: 50px;
+    left: 40px;
 }
 
 #madlibs:hover #msmallcloud2 {
-    animation: moveCloud2 0.5s ease forwards;
+    top: 30px;
+    left: 85%;
 }
 
 #madlibs:hover #msmallcloud3 {
-    animation: moveCloud3 0.5s ease forwards;
+    top: 215px;
+    left: 10px;
 }
 
-/* keyframes */
-@keyframes moveMCloud1 {
-    0% {
-        top: 50px;
-        left: 50px;
-    }
-    100% {
-        top: -80px;
-        left: -50px;
-    }
-}
-
-@keyframes moveMCloud2 {
-    0% {
-        top: 50px;
-        left: 50px;
-    }
-    100% {
-        top: -30px;
-        left: 200px;
-    }
-}
-
-@keyframes moveMCloud3 {
-    0% {
-        top: 50px;
-        left: 50px;
-    }
-    100% {
-        top: 180px;
-        left: 150px;
-    }
-}
-
-footer p a {
-    color: #4DBEFF;
+#madlibs:hover #msmallcloud4 {
+    top: 230px;
+    left: 95%;
 }
 
 
 /* ---------------------------------------------------------- */
 /* EVERY PICTURE */
 
-#everyPicture {
+#everypicture {
     position: absolute;
-    top: 150px;
-    left: 500px;
+    top: 100px;
+    left: 600px;
     width: 239px;
     height: 174px;
+    /* glenda added */
+    /* border: 2px solid purple; */
+    display: grid;
+    place-items: center;
+    /* transitions in both direction */
+    transition: all .5s ease;
 }
 
 #e-h2 {
     position: absolute;
-    top: 150px;
-    left: 500px;
+    /* glenda updated so always in center */
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-/* style for small clouds, starting position */
-#esmallcloud1, #esmallcloud2, #esmallcloud3 {
+#ebigcloud {
     position: absolute;
-    top: 50px;
-    left: 50px;
-    z-index: -1;
+    /* glenda updated so always in center */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-/* hover animations */
+/* glenda added */
+#esmallcloud1 a, #esmallcloud2 a, #esmallcloud3 a, #esmallcloud4 a {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#esmallcloud5 a {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#everypicture:hover {
+    /* from glenda: added 100px w and h */
+    width: 339px;
+    height: 274px;
+    transform: translate(-50px, -50px);
+}
+
 #everypicture:hover #esmallcloud1 {
-    animation: moveCloud1 0.5s ease forwards;
+    top: 50px;
+    left: 40px;
+    /* animation: moveRCloud1 0.5s ease forwards; */
 }
 
 #everypicture:hover #esmallcloud2 {
-    animation: moveCloud2 0.5s ease forwards;
+    top: 50px;
+    left: 90%;
+    /* animation: moveCloud2 0.5s ease forwards; */
 }
 
 #everypicture:hover #esmallcloud3 {
-    animation: moveCloud3 0.5s ease forwards;
+    top: 225px;
+    left: 5%;
 }
 
-/* keyframes */
-@keyframes moveECloud1 {
-    0% {
-        top: 50px;
-        left: 50px;
-    }
-    100% {
-        top: -80px;
-        left: -50px;
-    }
+#everypicture:hover #esmallcloud4 {
+    top: 220px;
+    left: 100%;
 }
 
-@keyframes moveECloud2 {
-    0% {
-        top: 50px;
-        left: 50px;
-    }
-    100% {
-        top: -30px;
-        left: 200px;
-    }
+#everypicture:hover #esmallcloud5 {
+    top: 280px;
+    left: 50%;
 }
 
-@keyframes moveECloud3 {
-    0% {
-        top: 50px;
-        left: 50px;
-    }
-    100% {
-        top: 180px;
-        left: 150px;
-    }
-}
-
-footer p a {
-    color: #4DBEFF;
-}
 
 
 /* ---------------------------------------------------------- */
@@ -288,73 +297,101 @@ footer p a {
 
 #gameon {
     position: absolute;
-    top: 300px;
+    top: 325px;
     left: 800px;
     width: 239px;
     height: 174px;
+    /* glenda added */
+    /* border: 2px solid purple; */
+    display: grid;
+    place-items: center;
+    /* transitions in both direction */
+    transition: all .5s ease;
 }
 
 #g-h2 {
     position: absolute;
-    top: 300px;
-    left: 800px;
+    /* glenda updated so always in center */
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-/* style for small clouds, starting position */
-#gsmallcloud1, #gsmallcloud2, #gsmallcloud3 {
+#gbigcloud {
     position: absolute;
-    top: 50px;
-    left: 50px;
-    z-index: -1;
+    /* glenda updated so always in center */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-/* hover animations */
+/* glenda added */
+#gsmallcloud1 a, #gsmallcloud2 a, #gsmallcloud3 a {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#gameon:hover {
+    /* from glenda: added 100px w and h */
+    width: 339px;
+    height: 274px;
+    transform: translate(-50px, -50px);
+}
+
 #gameon:hover #gsmallcloud1 {
-    animation: moveCloud1 0.5s ease forwards;
+    top: 50px;
+    left: 40px;
 }
 
 #gameon:hover #gsmallcloud2 {
-    animation: moveCloud2 0.5s ease forwards;
+    top: 50px;
+    left: 90%;
 }
 
 #gameon:hover #gsmallcloud3 {
-    animation: moveCloud3 0.5s ease forwards;
+    top: 215px;
+    left: 10px;
 }
 
-/* keyframes */
-@keyframes moveGCloud1 {
-    0% {
-        top: 50px;
-        left: 50px;
-    }
-    100% {
-        top: -80px;
-        left: -50px;
-    }
+/* ---------------------------------------------------------- */
+
+
+.small-cloud {
+    /* put in center of big cloud and behind */
+    position: absolute;
+    /* glenda updated so always in center */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* glenda updated value */
+    z-index: -1;
+
+    /* border: 2px solid purple; */
+
+    /* put children in center */
+    display: grid;
+    place-items: center;
+    transition: all .5s ease;
 }
 
-@keyframes moveGCloud2 {
-    0% {
-        top: 50px;
-        left: 50px;
+    .small-cloud a {
+        position: absolute;
+        text-decoration: none;
+        color: #4DBEFF;
+        font-family: "Kdam Thmor Pro", serif;
+        font-size: 16px;
     }
-    100% {
-        top: -30px;
-        left: 200px;
-    }
-}
 
-@keyframes moveGCloud3 {
-    0% {
-        top: 50px;
-        left: 50px;
-    }
-    100% {
-        top: 180px;
-        left: 150px;
-    }
+footer {
+    display: flex;
+    gap: 15px;
+    margin-left: 20px;
 }
 
 footer p a {
     color: #4DBEFF;
 }
+
