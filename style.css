@@ -104,6 +104,14 @@ main {
     text-align: center;
 }
 
+#rsmallcloud4 a {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
 
 #research:hover {
     /* from glenda: added 100px w and h */
@@ -127,7 +135,7 @@ main {
     left: 30%;
 }
 
-#research:hover #msmallcloud4 {
+#research:hover #rsmallcloud4 {
     top: 230px;
     left: 95%;
 }
