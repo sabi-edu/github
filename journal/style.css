@@ -74,13 +74,6 @@ main {
     transform: translate(-50%, -50%);
 }
 
-#1bigcloud h2 {
-    position: absolute;
-    /* glenda updated so always in center */
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
 
 
 /* ---------------------------------------------------------- */
@@ -108,13 +101,6 @@ main {
     transform: translate(-50%, -50%);
 }
 
-#2bigcloud {
-    position: absolute;
-    /* glenda updated so always in center */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
 
 
 /* ---------------------------------------------------------- */
@@ -142,13 +128,6 @@ main {
     transform: translate(-50%, -50%);
 }
 
-#3bigcloud {
-    position: absolute;
-    /* glenda updated so always in center */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
 
 /* ______________________________________ */
 
