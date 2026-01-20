@@ -16,7 +16,7 @@
 body {
     max-width: 1200px;
     min-width: 1200px;
-    background-image: url(journal-images/starry-bg-plain.png)
+    background-image: url(journal-images/starry-bg-plain.png);
     background-repeat: no-repeat;
     /* background: linear-gradient(180deg, #6289FF 0%, #44B9FF 15.87%, #FFEFFC 100%); */
 }
