@@ -23,7 +23,7 @@
         </div>
 
         <div class="counter-box">
-            <h3>id="undergradName"></h3>
+            <h3 id="undergradName"></h3>
             <div>$<span id="studentCounter" class="amount">0.0000</span></div>
         </div>
         <!-- Resource: https://www.w3schools.com/tags/tag_span.asp -->
@@ -49,9 +49,9 @@
         var garyTotal = 0;
         var studentTotal = 0;
 
-        costOfLivingPerYrCA = 42168;
+        var costOfLivingPerYrCA = 42168;
         // source: https://www.salary.com/research/cost-of-living/ca
-        costOfLivingPerSecCA = (costOfLivingPerYrCA / minPerYr) / 60;
+        var costOfLivingPerSecCA = (costOfLivingPerYrCA / minPerYr) / 60;
 
 
         var inputName = document.querySelector('#undergradName');
