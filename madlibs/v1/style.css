@@ -1,0 +1,143 @@
+.kavoon-regular {
+  font-family: "Kavoon", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.kdam-thmor-pro-regular {
+  font-family: "Kdam Thmor Pro", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/* ------------------------ */
+
+body {
+    max-width: 1200px;
+    background-image: url(images/starry-bg-plain.png);
+    background-repeat: no-repeat;
+}
+
+header {
+    height: 125px;
+    margin-top: 80px;
+}
+
+h1 {
+    color: white;
+    font-family: "Kavoon", serif;
+    font-size: 50px;
+    text-align: center;
+}
+
+h2 {
+    color: white;
+    font-family: "Kdam Thmor Pro", serif;
+    font-size: 30px;
+}
+
+p {
+    color: white;
+    font-family: "Kdam Thmor Pro", serif;
+    font-size: 20px;
+    line-height: 40px;
+}
+
+#body-inner {
+    min-width: 1200px;
+    max-width: 1200px;
+    min-height: 750px;
+    max-height: 750px;
+    position: relative;
+}
+
+#header-and-main-container {
+    display: flex;
+    gap: 60px;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    margin-top: 140px;
+    flex: 2;
+}
+
+header h2 {
+    margin-left: 100px;
+}
+
+main {
+    margin: 20px;
+    flex: 3;
+}
+
+article {
+    margin: 110px 120px 0px 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color: #5D91FF;
+    border-radius: 2px;
+}
+
+section #tinycloud1 {
+    position: absolute;
+    top: 135px;
+    left: 900px;
+}
+
+section #tinycloud2 {
+    position: absolute;
+    top: 190px;
+    left: 883px;
+}
+
+section #tinycloud3 {
+    position: absolute;
+    top: 240px;
+    left: 730px;
+}
+
+section #tinycloud4 {
+    position: absolute;
+    top: 240px;
+    left: 930px;
+}
+
+section #tinycloud5 {
+    position: absolute;
+    top: 320px;
+    left: 645px;
+}
+
+section #tinycloud6 {
+    position: absolute;
+    top: 430px;
+    left: 705px;
+}
+
+section #tinycloud7 {
+    position: absolute;
+    top: 485px;
+    left: 765px;
+}
+
+section #tinycloud8 {
+    position: absolute;
+    top: 580px;
+    left: 855px;
+}
+
+footer {
+    display: flex;
+    gap: 15px;
+    margin-left: 20px;
+}
+
+footer p, footer p a {
+    color: #4DBEFF;
+}
+
