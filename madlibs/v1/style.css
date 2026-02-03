@@ -34,7 +34,7 @@ h1 {
 h2 {
     color: white;
     font-family: "Kdam Thmor Pro", serif;
-    font-size: 30px;
+    font-size: 24px;
 }
 
 p {
@@ -60,12 +60,30 @@ p {
 header {
     display: flex;
     flex-direction: column;
-    margin-top: 140px;
+    margin-top: 120px;
     flex: 2;
 }
 
 header h2 {
     margin-left: 100px;
+}
+
+.madlibs-form {
+    margin-top: 10px;
+    margin-left: 110px;
+}
+
+.madlibs-input {
+    color: pink;
+}
+
+#adverb, #verb1, #plural-noun1, #verb2, #plural-noun2, #adj1, #verb3, #adj2 {
+    font-size: 16px;
+    width: 120px;
+    margin-bottom: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 5px;
 }
 
 main {
@@ -83,61 +101,68 @@ article {
     border-radius: 2px;
 }
 
-section #tinycloud1 {
+section #cloud1 {
     position: absolute;
-    top: 135px;
+    top: 65px;
+    left: 650px;
+}
+
+section #cloud2 {
+    position: absolute;
+    top: 155px;
+    left: 960px;
+}
+
+section #cloud3 {
+    position: absolute;
+    top: 255px;
+    left: 600px;
+}
+
+section #cloud4 {
+    position: absolute;
+    top: 280px;
+    left: 770px;
+}
+
+section #cloud5 {
+    position: absolute;
+    top: 500px;
     left: 900px;
 }
 
-section #tinycloud2 {
+section #cloud6 {
     position: absolute;
-    top: 190px;
-    left: 883px;
+    top: 510px;
+    left: 580px;
 }
 
-section #tinycloud3 {
+section #tiny-cloud1 {
     position: absolute;
-    top: 240px;
-    left: 730px;
+    top: 280px;
+    left: 1090px;
 }
 
-section #tinycloud4 {
-    position: absolute;
-    top: 240px;
-    left: 930px;
-}
-
-section #tinycloud5 {
-    position: absolute;
-    top: 320px;
-    left: 645px;
-}
-
-section #tinycloud6 {
+section #tiny-cloud2 {
     position: absolute;
     top: 430px;
-    left: 705px;
+    left: 500px;
 }
 
-section #tinycloud7 {
+section #tiny-cloud3 {
     position: absolute;
-    top: 485px;
-    left: 765px;
-}
-
-section #tinycloud8 {
-    position: absolute;
-    top: 580px;
-    left: 855px;
+    top: 550px;
+    left: 1070px;
 }
 
 footer {
     display: flex;
     gap: 15px;
-    margin-left: 20px;
+    margin-left: 800px;
 }
 
 footer p, footer p a {
     color: #4DBEFF;
 }
 
+p
