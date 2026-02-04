@@ -68,13 +68,9 @@ header h2 {
     margin-left: 100px;
 }
 
-.madlibs-form {
+#form {
     margin-top: 10px;
     margin-left: 110px;
-}
-
-.madlibs-input {
-    color: pink;
 }
 
 #adverb, #verb1, #plural-noun1, #verb2, #plural-noun2, #adj1, #verb3, #adj2 {
@@ -164,5 +160,3 @@ footer {
 footer p, footer p a {
     color: #4DBEFF;
 }
-
-p
