@@ -69,15 +69,63 @@ header h2 {
 }
 
 #madlib-form {
-    margin-top: 10px;
     margin-left: 110px;
 }
 
-#adverb, #verb1, #pln1, #verb2, #pln2, #adj1, #verb3, #adj2 {
-    font-size: 20px;
-    font-weight: bold;
-    text-decoration: underline;
+/* ------------------- */
+
+label[for="name"], #name {
+    display: inline;
 }
+
+input[type="text"] { 
+    width: 20ch;
+    outline: none; 
+    border: 4px dashed transparent;        
+    border-bottom: 4px dashed white; 
+    padding: 3px;
+    padding-left: 7px;
+    font-size: 1em; 
+    font-weight: bold;
+    text-transform: lowercase; 
+    background-color:transparent;  
+    color:white;     
+}
+
+input[type="text"]::placeholder {
+    color:#5D91FF;
+}
+
+input[type="text"]:focus {          
+    border: 4px dashed white; 
+    border-style: dotted dashed solid double;
+    color: white;
+    background-color: transparent;       
+}
+
+/* ------------------- */
+
+input[type="submit"] {
+    padding: .5em;
+    border: 0;
+    border-radius: 12px;
+    font-size: 1em;
+    font-weight: bold;
+    background-color: #5D91FF;
+    color: white;
+}
+
+input[type="submit"]:hover {
+    background-color: white;
+    color:#4DBEFF;
+}
+
+/* ---------------------- */
+
+article span {
+    font-weight: bold;
+}
+
 main {
     margin: 20px;
     flex: 3;
@@ -93,66 +141,65 @@ article {
     border-radius: 2px;
 }
 
-section #cloud1 {
+section div {
     position: absolute;
+    transition: all 1s ease;
+}
+
+section #cloud1 {
     top: 65px;
     left: 650px;
 }
 
 section #cloud2 {
-    position: absolute;
     top: 155px;
     left: 960px;
 }
 
 section #cloud3 {
-    position: absolute;
     top: 255px;
     left: 600px;
 }
 
 section #cloud4 {
-    position: absolute;
     top: 280px;
     left: 770px;
 }
 
 section #cloud5 {
-    position: absolute;
     top: 500px;
     left: 900px;
 }
 
 section #cloud6 {
-    position: absolute;
     top: 510px;
     left: 580px;
 }
 
 section #tiny-cloud1 {
-    position: absolute;
     top: 280px;
     left: 1090px;
 }
 
 section #tiny-cloud2 {
-    position: absolute;
     top: 430px;
     left: 500px;
 }
 
 section #tiny-cloud3 {
-    position: absolute;
     top: 550px;
     left: 1070px;
 }
 
 footer {
+    position: relative;
+    top: -28px;
     display: flex;
     gap: 15px;
-    margin-left: 800px;
+    margin-left: 860px;
 }
 
 footer p, footer p a {
+    font-size: 16px;
     color: #4DBEFF;
 }
