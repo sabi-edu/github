@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+
+    <title>Madlibs V1</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kavoon&family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="body-inner">
+        <div id="header-and-main-container">
+            <header>
+                <h1>CloudLibs</h1>
+                <h2>My memory of last night is all clouded... could you help jog my memory?</h2>
+                
+                <form id="madlib-form">
+                    <div>
+                        <label for="adverb-input"></label>
+                        <input type="text" id="adverb-input" placeholder="adverb">
+                    </div>
+                    
+                    <div>
+                        <label for="verb1-input"></label>
+                        <input type="text" id="verb1-input" placeholder="verb">
+                    </div>
+                    
+                    <div>
+                        <label for="pln1-input"></label>
+                        <input type="text" id="pln1-input" placeholder="plural noun">
+                    </div>
+                    
+                    <div>
+                        <label for="verb2-input"></label>
+                        <input type="text" id="verb2-input" placeholder="verb">
+                    </div>
+                    
+                    <div>
+                        <label for="pln2-input"></label>
+                        <input type="text" id="pln2-input" placeholder="plural noun">
+                    </div>
+                    
+                    <div>
+                        <label for="adj1-input"></label>
+                        <input type="text" id="adj1-input" placeholder="adjective">
+                    </div>
+
+                    <div>
+                        <label for="verb3-input"></label>
+                        <input type="text" id="verb3-input" placeholder="verb">
+                    </div>
+
+                    <div>
+                        <label for="adj2-input"></label>
+                        <input type="text" id="adj2-input" placeholder="adjective">
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <input type="submit" value="Enter!">
+                    </div>
+                </form>
+            </header>
+
+            <main>
+                <article>
+                    <p>I was up late studying when <span id="adverb">[adverb]</span> the words on the page start to <span id="verb1">[verb]</span>.</p> 
+                    <p>Then the <span id="pln1">[plural noun]</span> in my room <span id="verb2">[verb]</span> around in the air and 
+                    I hear the sound of <span id="pln2">[plural noun]</span> outside my window.</p>
+                    <p>I thought I was losing my mind and I felt pretty <span id="adj1">[adjective]</span>.</p>
+                    <p>But now that I <span id="verb3">[verb]</span> about it, I woke up at my desk this morning...</p> 
+                    <p>So I must've just fallen <span id="adj2">[adjective]</span>!</p>
+                </article>
+
+                <p id="error-msg"></p>
+
+                <section>
+                    <div id="cloud1">
+                        <img src="images/big-cloud.png" alt="Small Cloud">
+                    </div>
+
+                    <div id="cloud2">
+                        <img src="images/small-cloud.png" alt="Cloud">
+                    </div>
+
+                    <div id="cloud3">
+                        <img src="images/small-cloud.png" alt="Cloud">
+                    </div>
+
+                    <div id="cloud4">
+                        <img src="images/big-cloud.png" alt="Cloud">
+                    </div>
+
+                    <div id="cloud5">
+                        <img src="images/small-cloud.png" alt="Cloud">
+                    </div>
+
+                    <div id="cloud6">
+                        <img src="images/big-cloud.png" alt="Cloud">
+                    </div>
+
+                    <div id="tiny-cloud1">
+                        <img src="images/tiny-cloud.png" alt="Cloud">
+                    </div>
+
+                    <div id="tiny-cloud2">
+                        <img src="images/tiny-cloud.png" alt="Cloud">
+                    </div>
+
+                    <div id="tiny-cloud3">
+                        <img src="images/tiny-cloud.png" alt="Cloud">
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <footer>
+            <p>Sabi Iñíguez</p>
+            <p><a href="mailto:&#115;&#112;&#097;&#116;&#116;&#101;&#114;&#115;&#111;&#110;&#064;&#117;&#099;&#100;&#097;&#118;&#105;&#115;&#046;&#101;&#100;&#117;">spatterson@ucdavis.edu</a></p>
+        </footer>
+    </div>
+</body>
+</html>

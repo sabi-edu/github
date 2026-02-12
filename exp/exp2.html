@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 2</title>
+
+    <link rel="stylesheet" href="exp2style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Oh May!</h1>
+        <h2>Net Profit of UCD Chancellor vs Recent Undergrad</h2>
+        <p>$ Earned per Minute <em>minus</em> Living Wage in CA</p>
+    </header>
+    
+    <main>
+        <div class="counter-box">
+            <h3>Gary May!</h3>
+            <div>$<span id="garyCounter" class="amount">0.0000</span></div>
+        </div>
+
+        <div class="counter-box">
+            <h3 id="undergradName"></h3>
+            <div>$<span id="studentCounter" class="amount">0.0000</span></div>
+        </div>
+        <!-- Resource: https://www.w3schools.com/tags/tag_span.asp -->
+
+        <sub><em>Not incl. avg student debt of ~$20,000 for 4 years of loans</em></sub>
+        <!-- Source: https://www.collegefactual.com/colleges/university-of-california-davis/paying-for-college/student-loan-debt/ -->
+    </main>
+
+    <script>
+
+        var namePrompt = prompt('Hi! Ready to find out what you could be making as a recent undergrad of a UC? Type your name to find out!', '');
+
+        var garyYrWage = 895000;
+        // Source: https://ucdfa.org/2024/10/letter-to-uc-regarding-cola-and-medical-plan-costs/#:~:text=As%20you%20may%20know%2C%20effective,Prof%20Step%20I%2C%20%2474%2C600)
+        var minHrWage = 16.9;
+        var workHrsPerYr = 2080;
+        var studentYrWage = minHrWage * workHrsPerYr;
+        var minPerYr = 525600;
+
+        var garyPerSec = (garyYrWage / minPerYr) / 60;
+        var studentPerSec = (studentYrWage / minPerYr) / 60;
+
+        var garyTotal = 0;
+        var studentTotal = 0;
+
+        var costOfLivingPerYrCA = 42168;
+        // source: https://www.salary.com/research/cost-of-living/ca
+        var costOfLivingPerSecCA = (costOfLivingPerYrCA / minPerYr) / 60;
+
+
+        var inputName = document.querySelector('#undergradName');
+        inputName.innerHTML = `${namePrompt}`;
+
+
+        setInterval(function() {
+            // Resource: https://www.w3schools.com/jsref/met_win_setinterval.asp            
+            garyTotal += garyPerSec;
+            studentTotal += studentPerSec;
+
+            garyTotal -= costOfLivingPerSecCA;
+            studentTotal -= costOfLivingPerSecCA;
+
+            document.querySelector('#garyCounter').innerHTML = garyTotal.toFixed(4);
+            document.querySelector('#studentCounter').innerHTML = studentTotal.toFixed(4);
+        }, 1000);
+
+    </script>
+
+</body>
+</html>
