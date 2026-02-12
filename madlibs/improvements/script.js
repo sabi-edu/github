@@ -12,6 +12,8 @@
         if (emptyfields > 0){
             document.querySelector('#error-msg').innerHTML = 'There are empty fields!'
         } else {
+            document.querySelector('#hover-msg').innerHTML = '<em>Clear the clouds with your cursor!</em>'
+            
             const adverbInput = document.querySelector('#adverb-input').value;
             const verb1Input = document.querySelector('#verb1-input').value;
             const pln1Input = document.querySelector('#pln1-input').value;

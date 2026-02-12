@@ -191,6 +191,16 @@ section #tiny-cloud3 {
     left: 1070px;
 }
 
+#form-complete {
+    display: flex;
+    gap: 10px;
+}
+
+#hover-msg {
+    color: #4DBEFF;
+    font-size: 14px;
+}
+
 footer {
     position: relative;
     top: -28px;
