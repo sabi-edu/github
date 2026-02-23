@@ -16,16 +16,16 @@
     let timer;
 
     function startTimer() {
-        
+
     }
 
     document.addEventListener('mousemove', function() {
-        onboarding.class('hidden'); 
+        onboarding.className('hidden'); 
     });
 
     
     document.addEventListener('keydown', function(event) {
-        onboarding.class('hidden');
+        onboarding.className('hidden');
         startTimer();
 
         if (event.key === 'ArrowUp') y -= speed;
