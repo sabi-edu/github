@@ -14,47 +14,48 @@
 /* ------------------------ */
 
 body {
-    max-width: 1200px;
-    background-image: url(images/starry-bg-plain.png);
-    background-repeat: no-repeat;
+    background-image: url(images/lj-bg.png);
 }
 
-header {
-    height: 125px;
-    margin-top: 80px;
+h1, h2, p, a, figcaption {
+    color: white;
 }
 
 h1 {
-    color: white;
-    font-family: "Kavoon", serif;
-    font-size: 50px;
     text-align: center;
+    font-size: 60px;
+    font-family: "Kavoon", serif;
+}
+
+header h1 {
+    text-align: left;
+    padding-top: 120px;
+    padding-left: 50px;
 }
 
 h2 {
-    color: white;
     font-family: "Kavoon", serif;
-    font-size: 20px;
+    font-size: 28px;
 }
 
 p, a, figcaption {
-    color: white;
     font-family: "Kdam Thmor Pro", serif;
-    font-size: 14px;
+    font-size: 20px;
 }
 
 main {
-    max-width: 1180px;
+    padding-left: 20px;
+    padding-right: 20px;
     display: flex;
-    gap: 20px;
-    justify-content: space-evenly;
+    flex-wrap: wrap; 
+    gap: 30px;
 }
 
 article {
-    flex: 1;
+    max-width: 500px;
     background-color: #5D91FF;
     border-radius: 20px;
-    padding: 10px;
+    padding: 40px;
 }
 
 figure {
