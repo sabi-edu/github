@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo Code</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="pseudo">
+    <p>
+
+        START GAME <br>
+        title page start button <br>
+        ---hide title page <br>
+        ---Shooting Star round randomized out of 5 rounds <br>
+        ---round number = 0 <br>
+        ---P1 score = 0 <br>
+        ---P2 score = 0 <br>
+        Check Round() <br>
+        <br>
+
+        CHECK ROUND <br>
+        if round number < 5 [ <br>
+        ---Start Round() <br>
+        ] else [
+        ---End Game()] <br>
+        <br>
+
+        START ROUND <br>
+        round number 1++ <br>
+        ---show cast overlay <br>
+        P1/Sun forecasts weather<br>
+        ---hide P1's chosen weather in Cast Overlay <br>
+        ---show P1's chosen weather under P1 avatar card <br>
+        ------P2/Moon forecasts weather<br>
+        ---------hide P2's chosen weather in Cast Overlay <br>
+        ---------show P2's chosen weather under P2 avatar card <br>
+        ------------hide weather not chosen by P1 or P2 <br>
+        ------------show Stargaze button <br>
+        Stargaze button <br>
+        ---hide Cast Overlay <br>
+        ---if not Shooting Star round [ <br>
+        ------randomize weather (Cloud or Clear) <br>
+        ------show randomized weather <br>
+        ---] else [ <br>
+        ------show Shooting Star weather in sky] <br>
+        if weather in sky =/ P1 or P2 chosen weather [ <br>
+        ---show round result = draw <br>
+        ] else if P1 chosen weather = weather in sky[ <br>
+        ---P1 score 1++
+        ---show round result = Sun <br>
+        ---show plus point img for P1 <br>
+        ---update P1 score img <br>
+        ] else if P2 chosen weather = weather in sky[ <br>
+        ---P2 score 1++
+        ---show round result = Moon <br>
+        ---show plus point img for P2 <br>
+        ---update P2 score img]<br>
+        Check Round() <br>
+        <br>
+
+        END GAME <br>
+        ---hide all round ui <br>
+        ---if P1 score = P2 score [ <br>
+        ------show game result = draw <br>
+        ---] else if P1 score > P2 score [ <br>
+        ------show game result = Sun <br>
+        ---] else if P1 score < P2 score [ <br>
+        ------show game result = Moon]<br>
+
+    </p>
+</body>
+</html>

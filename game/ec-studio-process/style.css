@@ -1,0 +1,83 @@
+.kavoon-regular {
+  font-family: "Kavoon", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.kdam-thmor-pro-regular {
+  font-family: "Kdam Thmor Pro", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/* ------------------------ */
+
+body {
+    background: rgb(255, 204, 241);
+}
+
+h1, h2, p, a, figcaption {
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    font-size: 60px;
+    font-family: "Kavoon", serif;
+}
+
+header h1 {
+    text-align: left;
+    padding-top: 30px;
+    padding-left: 50px;
+}
+
+h2 {
+    font-family: "Kavoon", serif;
+    font-size: 28px;
+}
+
+p, a, figcaption {
+    font-family: "Kdam Thmor Pro", serif;
+    font-size: 20px;
+}
+
+main {
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 30px;
+}
+
+article {
+    max-width: 500px;
+    background-color: rgb(252, 142, 222);
+    border-radius: 20px;
+    padding: 40px;
+}
+
+figure {
+    padding: 0;
+    margin: 0;
+}
+
+footer {
+    display: flex;
+    gap: 15px;
+    margin-left: 20px;
+}
+
+footer p, footer p a {
+    color: rgb(252, 142, 222);
+}
+
+.pseudo {
+    background: rgb(255, 181, 235);
+}
+
+.pseudo p {
+    font-family: monospace;
+    font-size: 14px;
+}

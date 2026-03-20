@@ -2,13 +2,22 @@
     'use strict';
     console.log('reading js');
 
-    const gameHeader = document.querySelector('#game-header');
+    const gameHeaderh1 = document.querySelector('#game-header h1');
     const castOverlay = document.querySelector('#cast-overlay');
+    const castOverlayTitle = document.querySelector('#overlay-title');
     const castOverlaySection = document.querySelector('#cast-overlay section');
     const castCloud = document.querySelector('#cast-cloud');
     const castClear = document.querySelector('#cast-clear');
     const castStar = document.querySelector('#cast-star');
     const skyGaze = document.querySelector('#skygaze-btn');
+
+    const p1AvatarCloud = document.querySelector('#p1-avatar-cloud');
+    const p1AvatarClear = document.querySelector('#p1-avatar-clear');
+    const p1AvatarStar = document.querySelector('#p1-avatar-star');
+    
+    const p2AvatarCloud = document.querySelector('#p2-avatar-cloud');
+    const p2AvatarClear = document.querySelector('#p2-avatar-clear');
+    const p2AvatarStar = document.querySelector('#p2-avatar-star');
 
     const left1p = document.querySelector('#left-1p');
     const left2p = document.querySelector('#left-2p');
@@ -52,7 +61,7 @@
 
     // CHECK ROUND
     function checkRound(){
-        // console.log('checkRound called');
+        console.log('checkRound called');
         if(roundNum < 5){
             startRound();
         } else {
@@ -65,14 +74,15 @@
         // console.log('startRound called');
         roundNum++;
         console.log(`roundNum is ${roundNum}`);
-        gameHeader.style.display = 'block';
+        gameHeaderh1.style.display = 'block';
         document.querySelector('#avatar-sun').style.display = 'block';
         document.querySelector('#avatar-moon').style.display = 'block';
         castOverlay.style.display = 'block';
+        castOverlayTitle.style.display = 'block';
         castOverlaySection.style.display = 'flex';
-        castCloud.style.display = 'block';
-        castClear.style.display = 'block';
-        castStar.style.display = 'block';
+        castCloud.className = 'visible';
+        castClear.className = 'visible';
+        castStar.className = 'visible';
         avatarsAndWeather.style.display = 'flex'
         p1CastWeather();
     }
@@ -91,15 +101,14 @@
             castStar.removeEventListener('click', p1ChosenWeather);
             
             if (p1Chosen == 'cast-cloud') {
-                castCloud.style.visibility = 'hidden';
-                // chosenCloud.style.display = 'block';
-                document.querySelector('#p1-avatar-cloud').style.display = 'block';
+                castCloud.className = 'hidden';
+                p1AvatarCloud.style.display = 'block';
             } else if(p1Chosen == 'cast-clear') {
-                castClear.style.visibility = 'hidden';
-                document.querySelector('#p1-avatar-clear').style.display = 'block';
+                castClear.className = 'hidden';
+                p1AvatarClear.style.display = 'block';
             } else {
-                castStar.style.visibility = 'hidden';  
-                document.querySelector('#p1-avatar-star').style.display = 'block';
+                castStar.className = 'hidden';
+                p1AvatarCloud.style.display = 'block';
             }
             p2CastWeather();
         }
@@ -111,8 +120,6 @@
         castClear.addEventListener('click', p2ChosenWeather);
         castStar.addEventListener('click', p2ChosenWeather);
 
-        // p2CastWeather();
-
         function p2ChosenWeather(){
             p2Chosen = this.id;
             // remove all event listeners
@@ -121,23 +128,24 @@
             castStar.removeEventListener('click', p2ChosenWeather);
             // let p1Cast = castCloud;
             if (p2Chosen == 'cast-cloud') {
-                castCloud.style.visibility = 'hidden';
+                castCloud.className = 'hidden';
                 // chosenCloud.style.display = 'block';
-                document.querySelector('#p2-avatar-cloud').style.display = 'block';
+                p2AvatarCloud.style.display = 'block';
             } else if(p2Chosen == 'cast-clear') {
-                castClear.style.visibility = 'hidden';
-                document.querySelector('#p2-avatar-clear').style.display = 'block';
+                castClear.className = 'hidden';
+                p2AvatarClear.style.display = 'block';
             } else {
-                castStar.style.visibility = 'hidden'; 
-                document.querySelector('#p2-avatar-star').style.display = 'block'; 
+                castStar.className = 'hidden';
+                p2AvatarStar.style.display = 'block'; 
             }
             castOverlaySection.style.display = 'none';
-            document.querySelector('#overlay-title').style.display = 'none';
+            castOverlayTitle.style.display = 'none';
             skyGaze.style.display = 'flex';
         }
     }
 
     skyGaze.addEventListener('click', function(){
+        skyGaze.style.display = 'none';
         castOverlay.style.display = 'none';
         gamePlay();
     });
@@ -196,14 +204,29 @@
             // weather section.style.display = 'hide';
             timeToCastBtn.style.display = 'block';
             timeToCastBtn.addEventListener('click', function(){
+                p1AvatarCloud.style.display = 'none';
+                p1AvatarClear.style.display = 'none';
+                p1AvatarStar.style.display = 'none';
+                p2AvatarCloud.style.display = 'none';
+                p2AvatarClear.style.display = 'none';
+                p2AvatarStar.style.display = 'none';
+
                 timeToCastBtn.style.display = 'none';
+                weatherCloudImg.style.display = 'none';
+                weatherClearImg.style.display = 'none';
+                weatherStarImg.style.display = 'none';
+
+                roundResultDraw.style.display = 'none';
+                roundResultSun.style.display = 'none';
+                roundResultMoon.style.display = 'none';
+
                 checkRound();
             });
         }
     }
 
     function endGame(){
-        gameHeader.style.display = 'none';
+        gameHeaderh1.style.display = 'none';
         avatarsAndWeather.style.display = 'none'
         document.querySelector('#score').style.display = 'none';
 
