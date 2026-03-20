@@ -2,204 +2,218 @@
     'use strict';
     console.log('reading js');
 
-    const body = document.querySelector('body');
-    const titlePage = document.querySelector('#title-page');
-    const startGame = document.querySelector('#title-page-skygaze-btn');
-    
-    const title = document.querySelector('#title');
-    const utilHelp = document.querySelector('#util-help');
-    const utilSettings = document.querySelector('#util-settings');
-    
-    const castingOverlay = document.querySelector('#casting-overlay');
-    const overlayTitle = document.querySelector('#overlay-title');
-    const iconSun = document.querySelector('#avatar-icon-sun');
-    const iconMoon = document.querySelector('#avatar-icon-sun');
-    const guessCloud = document.querySelector('#guess-common-cloud');
-    const guessClear = document.querySelector('#guess-common-clear');
-    const guessStar = document.querySelector('#guess-rare-star');
-    const castSkygazeBtn = document.querySelector('#skygaze-btn');
-    
-    const avatarSun = document.querySelector('#avatar-sun');
-    const leftChosenCloud = document.querySelector('#left-chosen-cloud');
-    const leftChosenClear = document.querySelector('#left-chosen-clear');
-    const leftChosenStar = document.querySelector('#left-chosen-star');
-    const leftScore1 = document.querySelector('#left-score-one');
-    const leftScore2 = document.querySelector('#left-score-two');
-    const leftScore3 = document.querySelector('#left-score-three');
-    const leftScore4 = document.querySelector('#left-score-four');
-    const leftScore5 = document.querySelector('#left-score-five');
-    const leftPlusPt = document.querySelector('#left-plus-point');
-    
-    const avatarMoon = document.querySelector('#avatar-moon');
-    const rightChosenCloud = document.querySelector('#right-chosen-cloud');
-    const rightChosenClear = document.querySelector('#right-chosen-clear');
-    const rightChosenStar = document.querySelector('#right-chosen-star');
-    const rightScore1 = document.querySelector('#right-score-one');
-    const rightScore2 = document.querySelector('#right-score-two');
-    const rightScore3 = document.querySelector('#right-score-three');
-    const rightScore4 = document.querySelector('#right-score-four');
-    const rightScore5 = document.querySelector('#right-score-five');
-    const rightPlusPt = document.querySelector('#right-plus-point');
+    const gameHeader = document.querySelector('#game-header');
+    const castOverlay = document.querySelector('#cast-overlay');
+    const castOverlaySection = document.querySelector('#cast-overlay section');
+    const castCloud = document.querySelector('#cast-cloud');
+    const castClear = document.querySelector('#cast-clear');
+    const castStar = document.querySelector('#cast-star');
+    const skyGaze = document.querySelector('#skygaze-btn');
 
-    const skyCloud = document.querySelector('#sky-cloud');
-    const skyClear = document.querySelector('#sky-clear');
-    const skyStar = document.querySelector('#sky-star');
-    const winnerSun = document.querySelector('#round-result-sun');
-    const winnerMoon = document.querySelector('#round-result-moon');
-    const winnerDraw = document.querySelector('#round-result-draw');
-    
-    
+    const left1p = document.querySelector('#left-1p');
+    const left2p = document.querySelector('#left-2p');
+    const left3p = document.querySelector('#left-3p');
 
+    const right1p = document.querySelector('#right-1p');
+    const right2p = document.querySelector('#right-2p');
+    const right3p = document.querySelector('#right-3p');
 
-    let roundNum = 0;
+    const leftPoints = [left1p, left2p, left3p];
+    const rightPoints = [right1p, right2p, right3p];
 
-    const gameData = {
-        commonWeather: ['cloud', 'clear'],
-        rareWeather: ['star'],
-        players: ['player 1', 'player 2'],
-        score: [0, 0],
-    };
+    const avatarsAndWeather = document.querySelector('#avatars-and-weather');
+    const weatherCloudImg = document.querySelector('#weather-cloud');
+    const weatherClearImg = document.querySelector('#weather-clear');
+    const weatherStarImg = document.querySelector('#weather-star');
+    const roundResultDraw = document.querySelector('#rr-draw');
+    const roundResultSun = document.querySelector('#rr-sun');
+    const roundResultMoon = document.querySelector('#rr-moon');
+    const timeToCastBtn = document.querySelector('#time-to-cast');
 
+    let roundNum;
+    let randomSkyStar;
+    let p1Score;
+    let p2Score;
+    let p1Chosen, p2Chosen;
+    let winningWeather;
 
-    // -- START GAME --
-    
-    title.style.display = 'none'
-    utilHelp.style.display = 'none'
-    utilSettings.style.display = 'none'
-    
-    castingOverlay.style.display = 'none';
-    overlayTitle.style.display = 'none';
-    iconSun.style.display = 'none';
-    iconMoon.style.display = 'none';
-    guessCloud.style.display = 'none';
-    guessClear.style.display = 'none';
-    guessStar.style.display = 'none';
-    castSkygazeBtn.style.display = 'none';
-    
-    avatarSun.style.display = 'none';
-    leftChosenCloud.style.display = 'none';
-    leftChosenClear.style.display = 'none';
-    leftChosenStar.style.display = 'none';
-    leftScore1.style.display = 'none';
-    leftScore2.style.display = 'none';
-    leftScore3.style.display = 'none';
-    leftScore4.style.display = 'none';
-    leftScore5.style.display = 'none';
-    leftPlusPt.style.display = 'none';
-    leftScore5.style.display = 'none';
-
-    avatarMoon.style.display = 'none';
-    rightChosenCloud.style.display = 'none';
-    rightChosenClear.style.display = 'none';
-    rightChosenStar.style.display = 'none';
-    rightScore1.style.display = 'none';
-    rightScore2.style.display = 'none';
-    rightScore3.style.display = 'none';
-    rightScore4.style.display = 'none';
-    rightScore5.style.display = 'none';
-    rightPlusPt.style.display = 'none';
-    rightScore5.style.display = 'none';
-    
-    skyCloud.style.display = 'none';
-    skyClear.style.display = 'none';
-    skyStar.style.display = 'none';
-    winnerSun.style.display = 'none';
-    winnerMoon.style.display = 'none';
-    winnerDraw.style.display = 'none';
-    
-
-
-
-    
-    startGame.addEventListener('click', function(){
-        // let starRound = Math.floor(Math.random() * roundNum.length);
-        // console.log(starRound);
-
-        titlePage.style.display = 'none';
-        title.style.display = 'block'
-        utilHelp.style.display = 'block'
-        utilSettings.style.display = 'block'
-
-        castingOverlay.style.display = 'block';
-        overlayTitle.style.display = 'block';
-        iconSun.style.display = 'block';
-        iconMoon.style.display = 'block';
-        guessCloud.style.display = 'block';
-        guessClear.style.display = 'block';
-        guessStar.style.display = 'block';
-
-        avatarSun.style.display = 'block';
-        avatarMoon.style.display = 'block';
-
-        // Start roundNum count ?
+    // START GAME 
+    //     title page start button 
+    document.querySelector('#start-game').addEventListener('click', function(){
+        // console.log('start game clicked');
+        document.querySelector('#title-page').style.display = 'none';
+        randomSkyStar = Math.floor(Math.random() * 5) + 1;
+        console.log(`randomSkyStar is ${randomSkyStar}`);
         roundNum = 0;
+        p1Score = 0;
+        p2Score = 0;
         checkRound();
-    
-        function checkRound() {
-            if(roundNum < 5){
-                roundNum++;
-                playRound();
+    })
+
+    // CHECK ROUND
+    function checkRound(){
+        // console.log('checkRound called');
+        if(roundNum < 5){
+            startRound();
+        } else {
+            endGame();
+        }
+    }
+
+    // START ROUND
+    function startRound(){
+        // console.log('startRound called');
+        roundNum++;
+        console.log(`roundNum is ${roundNum}`);
+        gameHeader.style.display = 'block';
+        document.querySelector('#avatar-sun').style.display = 'block';
+        document.querySelector('#avatar-moon').style.display = 'block';
+        castOverlay.style.display = 'block';
+        castOverlaySection.style.display = 'flex';
+        castCloud.style.display = 'block';
+        castClear.style.display = 'block';
+        castStar.style.display = 'block';
+        avatarsAndWeather.style.display = 'flex'
+        p1CastWeather();
+    }
+
+    function p1CastWeather(){
+        // console.log('p1CastWeather called');
+        castCloud.addEventListener('click', p1ChosenWeather);
+        castClear.addEventListener('click', p1ChosenWeather);
+        castStar.addEventListener('click', p1ChosenWeather);
+
+        function p1ChosenWeather(){
+            p1Chosen = this.id;
+
+            castCloud.removeEventListener('click', p1ChosenWeather);
+            castClear.removeEventListener('click', p1ChosenWeather);
+            castStar.removeEventListener('click', p1ChosenWeather);
+            
+            if (p1Chosen == 'cast-cloud') {
+                castCloud.style.visibility = 'hidden';
+                // chosenCloud.style.display = 'block';
+                document.querySelector('#p1-avatar-cloud').style.display = 'block';
+            } else if(p1Chosen == 'cast-clear') {
+                castClear.style.visibility = 'hidden';
+                document.querySelector('#p1-avatar-clear').style.display = 'block';
             } else {
-                console.log('The last round of the game is complete!');
-                // Check which player has the higher score
-            } 
+                castStar.style.visibility = 'hidden';  
+                document.querySelector('#p1-avatar-star').style.display = 'block';
+            }
+            p2CastWeather();
+        }
+    }
+
+
+    function p2CastWeather(){
+        castCloud.addEventListener('click', p2ChosenWeather);
+        castClear.addEventListener('click', p2ChosenWeather);
+        castStar.addEventListener('click', p2ChosenWeather);
+
+        // p2CastWeather();
+
+        function p2ChosenWeather(){
+            p2Chosen = this.id;
+            // remove all event listeners
+            castCloud.removeEventListener('click', p2ChosenWeather);
+            castClear.removeEventListener('click', p2ChosenWeather);
+            castStar.removeEventListener('click', p2ChosenWeather);
+            // let p1Cast = castCloud;
+            if (p2Chosen == 'cast-cloud') {
+                castCloud.style.visibility = 'hidden';
+                // chosenCloud.style.display = 'block';
+                document.querySelector('#p2-avatar-cloud').style.display = 'block';
+            } else if(p2Chosen == 'cast-clear') {
+                castClear.style.visibility = 'hidden';
+                document.querySelector('#p2-avatar-clear').style.display = 'block';
+            } else {
+                castStar.style.visibility = 'hidden'; 
+                document.querySelector('#p2-avatar-star').style.display = 'block'; 
+            }
+            castOverlaySection.style.display = 'none';
+            document.querySelector('#overlay-title').style.display = 'none';
+            skyGaze.style.display = 'flex';
+        }
+    }
+
+    skyGaze.addEventListener('click', function(){
+        castOverlay.style.display = 'none';
+        gamePlay();
+    });
+
+    function gamePlay(){
+        if(randomSkyStar != roundNum){
+            // console.log('not shooting star round');
+            //  randomize skyCloud or skyClear
+            // 0 is clear (false) and 1 is cloud (true)
+            const clearOrCloud = Math.floor(Math.random() * 2);
+            if(clearOrCloud) {
+                winningWeather = 'cast-cloud';
+                weatherCloudImg.style.display = 'block';
+            } else {
+                winningWeather = 'cast-clear';
+                weatherClearImg.style.display = 'block';
+            }         
+        } else {
+        //    console.log('show shooting star');
+            winningWeather = 'cast-star';
+            weatherStarImg.style.display = 'block';
+        }
+        
+        roundResult();
+    }
+
+    function roundResult(){
+        console.log(`roundResult called and winningWeather is ${winningWeather} and p1Chosen is ${p1Chosen} and p2Chosen is ${p2Chosen}`)
+        if (winningWeather != p1Chosen && winningWeather != p2Chosen) {
+            roundResultDraw.style.display = 'block';
+            timeToCast();
+
+        } else if (p1Chosen == winningWeather) {
+            p1Score++;
+            console.log(`p1score is ${p1Score}`);
+            roundResultSun.style.display = 'block';
+            // p1PlusPt.style.display = 'block';
+            // show score
+            console.log(leftPoints[p1Score-1])
+            leftPoints[p1Score-1].style.display = 'block';
+            timeToCast();
+
+        } else if (p2Chosen == winningWeather){
+            // P2 score 1++
+            p2Score++;
+            console.log(`p2Score is ${p2Score}`);
+            roundResultMoon.style.display = 'block';
+            // p2PlusPt.style.display = 'block';
+             // show score
+             console.log(rightPoints[p2Score-1])
+            rightPoints[p2Score-1].style.display = 'block';
+            timeToCast();
         }
 
-        function playRound(){
-            console.log(`Round ${roundNum} has started.`);
-            
-            // How to make it so Sun can click/cast one weather? Maybe template literal -- guess${weather} -- but not sure how
-            guessCloud.addEventListener('click', function(){
-                console.log('Sun casted cloudy weather!');
-                guessCloud.style.display = 'none';
-                leftChosenCloud.style.display = 'block';
-
-                guessStar.addEventListener('click', function(){
-                    console.log('Moon StarCasted!');
-                    guessStar.style.display = 'none';
-                    rightChosenStar.style.display = 'block';
-                    castSkygazeBtn.style.display = 'block';
-
-                    castSkygazeBtn.addEventListener('click', function(){
-                        castingOverlay.style.display = 'none';
-                        overlayTitle.style.display = 'none';
-                        iconSun.style.display = 'none';
-                        iconMoon.style.display = 'none';
-                        guessCloud.style.display = 'none';
-                        guessClear.style.display = 'none';
-                        guessStar.style.display = 'none';
-                        castSkygazeBtn.style.display = 'none';
-
-                        // Randomly select and display sky result
-                        skyStar.style.display = 'block';
-                        // if(`${player}chosen${weather} = sky${weather}`){
-                            console.log('The round winner is Moon!');
-                            winnerMoon.style.display = 'block';
-                            rightPlusPt.style.display = 'block';
-                            rightScore1.style.display = 'block';
-
-                            body.addEventListener('click', function(){
-                                checkRound();
-                                });
-                        // }
-                    });
-                });
+        function timeToCast(){
+            // weather section.style.display = 'hide';
+            timeToCastBtn.style.display = 'block';
+            timeToCastBtn.addEventListener('click', function(){
+                timeToCastBtn.style.display = 'none';
+                checkRound();
             });
-        } 
-    });
+        }
+    }
+
+    function endGame(){
+        gameHeader.style.display = 'none';
+        avatarsAndWeather.style.display = 'none'
+        document.querySelector('#score').style.display = 'none';
+
+        if (p1Score = p2Score) {
+            gameResultDraw.style.display = 'block';
+        } else if(p1Score > p2Score){
+            gameResultSun.style.display = 'block';
+        } else if(p1Score < p2Score){
+            gameResultMoon.style.display = 'block';
+        }
+    }
+
 })();
-
-// for(let i=0; i<5; i++){
-                // console.log(`Round ${i + 1} has started!`);
-
-
-
-
-    // <!-- At start of game, randomly set which round will be shooting star -->
-    //      <!-- Only randomly select other weather if not random number for shooting star, and if random #(round #) for shooting star - check if anyone chose star -->
-    //      <!-- Randomly select which player goes first -->
-    //     <!-- Player on the left goes first (switch players)-->
-    //      <!-- Re-enable addevent listener each round -->
-    //      <!-- Remove event listener after click, make choice look not choosable/clickable -->
-    //         <!-- tell which event to remove -->
-    //      <!-- 1st click to first player, 2nd to 2nd -->
