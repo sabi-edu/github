@@ -13,6 +13,8 @@ body {
     align-items: center;
 }
 
+
+
 #start-game, #skygaze-btn, #time-to-cast {
     border: 8px dotted #FBD055;
     cursor: pointer;

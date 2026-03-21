@@ -19,14 +19,22 @@
     const p2AvatarCloud = document.querySelector('#p2-avatar-cloud');
     const p2AvatarClear = document.querySelector('#p2-avatar-clear');
     const p2AvatarStar = document.querySelector('#p2-avatar-star');
+
     const left1p = document.querySelector('#left-1p');
     const left2p = document.querySelector('#left-2p');
     const left3p = document.querySelector('#left-3p');
+    const left4p = document.querySelector('#left-4p');
+    const left5p = document.querySelector('#left-5p');
+
     const right1p = document.querySelector('#right-1p');
     const right2p = document.querySelector('#right-2p');
     const right3p = document.querySelector('#right-3p');
-    const leftPoints = [left1p, left2p, left3p];
-    const rightPoints = [right1p, right2p, right3p];
+    const right4p = document.querySelector('#right-4p');
+    const right5p = document.querySelector('#right-5p');
+
+    const leftPoints = [left1p, left2p, left3p, left4p, left5p];
+    const rightPoints = [right1p, right2p, right3p, right4p, right5p];
+
     const avatarsAndWeather = document.querySelector('#avatars-and-weather');
     const weatherCloudImg = document.querySelector('#weather-cloud');
     const weatherClearImg = document.querySelector('#weather-clear');
@@ -110,7 +118,7 @@
                 p1AvatarClear.style.display = 'block';
             } else {
                 castStar.className = 'hidden';
-                p1AvatarCloud.style.display = 'block';
+                p1AvatarStar.style.display = 'block';
             }
             p2CastWeather();
         }
@@ -123,14 +131,12 @@
 
         function p2ChosenWeather(){
             p2Chosen = this.id;
-            // remove all event listeners
             castCloud.removeEventListener('click', p2ChosenWeather);
             castClear.removeEventListener('click', p2ChosenWeather);
             castStar.removeEventListener('click', p2ChosenWeather);
-            // let p1Cast = castCloud;
+            
             if (p2Chosen == 'cast-cloud') {
                 castCloud.className = 'hidden';
-                // chosenCloud.style.display = 'block';
                 p2AvatarCloud.style.display = 'block';
             } else if(p2Chosen == 'cast-clear') {
                 castClear.className = 'hidden';
@@ -139,6 +145,7 @@
                 castStar.className = 'hidden';
                 p2AvatarStar.style.display = 'block'; 
             }
+            
             castOverlaySection.style.display = 'none';
             castOverlayTitle.style.display = 'none';
             skyGaze.style.display = 'flex';
@@ -156,8 +163,6 @@
     // -- GAMEPLAY --
     function gamePlay(){
         if(randomSkyStar != roundNum){
-            // console.log('not shooting star round');
-            //  randomize skyCloud or skyClear
             // 0 is clear (false) and 1 is cloud (true)
             const clearOrCloud = Math.floor(Math.random() * 2);
             if(clearOrCloud) {
@@ -168,7 +173,7 @@
                 weatherClearImg.style.display = 'block';
             }         
         } else {
-        //    console.log('show shooting star');
+            console.log('show shooting star');
             winningWeather = 'cast-star';
             weatherStarImg.style.display = 'block';
         }
@@ -178,32 +183,36 @@
 
     // -- ROUND RESULTS --
     function roundResult(){
-        console.log(`roundResult called and winningWeather is ${winningWeather} and p1Chosen is ${p1Chosen} and p2Chosen is ${p2Chosen}`)
+        console.log(`roundResult called and winningWeather is ${winningWeather} and p1Chosen is ${p1Chosen} and p2Chosen is ${p2Chosen}`);
         if (winningWeather != p1Chosen && winningWeather != p2Chosen) {
             roundResultDraw.style.display = 'block';
+            
             if (roundNum < 5){
                 timeToCast();
             }
+
         } else if (p1Chosen == winningWeather) {
             p1Score++;
-            console.log(`p1score is ${p1Score}`);
+            console.log(`p1Score is ${p1Score}`);
+            leftPoints.display = 'none';
             roundResultSun.style.display = 'block';
-            // p1PlusPt.style.display = 'block';
-            // show score
-            console.log(leftPoints[p1Score-1])
+            console.log(leftPoints[p1Score-1]);
+            // leftPoints[p1Score].style.display = 'none';
             leftPoints[p1Score-1].style.display = 'block';
+            
             if (roundNum < 5){
                 timeToCast();
             }
+
         } else if (p2Chosen == winningWeather){
-            // P2 score 1++
             p2Score++;
             console.log(`p2Score is ${p2Score}`);
+            rightPoints.display = 'none';
             roundResultMoon.style.display = 'block';
-            // p2PlusPt.style.display = 'block';
-             // show score
-             console.log(rightPoints[p2Score-1])
+            console.log(rightPoints[p2Score-1]);
+            // rightPoints[p2Score].style.display = 'none';
             rightPoints[p2Score-1].style.display = 'block';
+            
             if (roundNum < 5){
                 timeToCast();
             }
