@@ -139,6 +139,12 @@ body {
     display: none;
 }
 
+#gr-sun, #gr-moon, #gr-draw {
+    margin-top: 200px;
+    margin-left: 300px;
+    display: none;
+}
+
 .visible {
     display: block;
     visibility: visible;

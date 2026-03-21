@@ -35,6 +35,9 @@
     const roundResultSun = document.querySelector('#rr-sun');
     const roundResultMoon = document.querySelector('#rr-moon');
     const timeToCastBtn = document.querySelector('#time-to-cast');
+    const gameResultDraw = document.querySelector('#gr-draw');
+    const gameResultSun = document.querySelector('#gr-sun');
+    const gameResultMoon = document.querySelector('#gr-moon');
 
     // LETS
     let roundNum;
@@ -57,11 +60,10 @@
         checkRound();
     })
 
-
     // CHECK ROUND
     function checkRound(){
         console.log('checkRound called');
-        if(roundNum < 5){
+        if(roundNum <= 5){
             startRound();
         } else {
             endGame();
@@ -179,7 +181,9 @@
         console.log(`roundResult called and winningWeather is ${winningWeather} and p1Chosen is ${p1Chosen} and p2Chosen is ${p2Chosen}`)
         if (winningWeather != p1Chosen && winningWeather != p2Chosen) {
             roundResultDraw.style.display = 'block';
-            timeToCast();
+            if (roundNum < 5){
+                timeToCast();
+            }
         } else if (p1Chosen == winningWeather) {
             p1Score++;
             console.log(`p1score is ${p1Score}`);
@@ -188,7 +192,9 @@
             // show score
             console.log(leftPoints[p1Score-1])
             leftPoints[p1Score-1].style.display = 'block';
-            timeToCast();
+            if (roundNum < 5){
+                timeToCast();
+            }
         } else if (p2Chosen == winningWeather){
             // P2 score 1++
             p2Score++;
@@ -198,7 +204,9 @@
              // show score
              console.log(rightPoints[p2Score-1])
             rightPoints[p2Score-1].style.display = 'block';
-            timeToCast();
+            if (roundNum < 5){
+                timeToCast();
+            }
         }
     }
 
@@ -229,6 +237,9 @@
     // -- END GAME --
     function endGame(){
         gameHeaderh1.style.display = 'none';
+        castOverlay.style.display = 'none';
+        castOverlaySection.style.display = 'none';
+        castOverlayTitle.style.display = 'none';
         avatarsAndWeather.style.display = 'none'
         document.querySelector('#score').style.display = 'none';
 
