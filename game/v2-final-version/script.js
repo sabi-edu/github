@@ -65,18 +65,19 @@
         roundNum = 0;
         p1Score = 0;
         p2Score = 0;
-        checkRound();
+        // checkRound();
+        timeToCast();
     })
 
     // CHECK ROUND
-    function checkRound(){
-        console.log('checkRound called');
-        if(roundNum <= 5){
-            startRound();
-        } else {
-            endGame();
-        }
-    }
+    // function checkRound(){
+    //     console.log('checkRound called');
+    //     if(roundNum <= 5){
+    //         startRound();
+    //     } else {
+    //         endGame();
+    //     }
+    // }
 
 
     // -- START ROUND --
@@ -113,14 +114,16 @@
             if (p1Chosen == 'cast-cloud') {
                 castCloud.className = 'hidden';
                 p1AvatarCloud.style.display = 'block';
+                p2CastWeather();
             } else if(p1Chosen == 'cast-clear') {
                 castClear.className = 'hidden';
                 p1AvatarClear.style.display = 'block';
+                p2CastWeather();
             } else {
                 castStar.className = 'hidden';
                 p1AvatarStar.style.display = 'block';
+                p2CastWeather();
             }
-            p2CastWeather();
         }
     }
 
@@ -188,7 +191,7 @@
             roundResultDraw.style.display = 'block';
             
             if (roundNum < 5){
-                timeToCast();
+                checkRound();
             }
 
         } else if (p1Chosen == winningWeather) {
@@ -201,7 +204,7 @@
             leftPoints[p1Score-1].style.display = 'block';
             
             if (roundNum < 5){
-                timeToCast();
+                checkRound();
             }
 
         } else if (p2Chosen == winningWeather){
@@ -214,12 +217,23 @@
             rightPoints[p2Score-1].style.display = 'block';
             
             if (roundNum < 5){
-                timeToCast();
+                checkRound();
             }
         }
     }
 
-    // -- TIME TO CAST --
+
+    // -- CHECK ROUND --
+    function checkRound(){
+        console.log('checkRound called');
+        if(roundNum < 5){
+            timeToCast();
+        } else {
+            endGame();
+        }
+    }
+
+    // TIME TO CAST
     function timeToCast(){
         // weather section.style.display = 'hide';
         timeToCastBtn.style.display = 'block';
@@ -237,8 +251,7 @@
             roundResultDraw.style.display = 'none';
             roundResultSun.style.display = 'none';
             roundResultMoon.style.display = 'none';
-
-            checkRound();
+            startRound();
         });
     }
 
